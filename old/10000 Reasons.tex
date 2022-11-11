@@ -1,0 +1,106 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, margin=0.5in]{geometry}
+\usepackage[chorded]{songs}
+% \usepackage{leadsheets}
+
+%% FORMATTING
+\noversenumbers
+\nosongnumbers
+
+% No horizontal bar that separates songs
+% Since we only have one song per document
+\setlength{\sbarheight}{0pt}
+% No vertical bar to the left the chorus
+\setlength{\cbarwidth}{0pt}
+
+%% FONTS
+\usepackage[sfdefault]{carlito}
+\renewcommand{\printchord}[1]{\carlito\bf#1}
+\renewcommand{\stitlefont}{\carlito\Huge\bf}
+\renewcommand{\extendprelude}{\showrefs{\large\songauthors}}
+
+%% VERSE AND CHORUS LABELS
+\def\notebgcolor{} % no background for \textnote
+\newcommand{\sectionlabel}[1]{\textbf{\nolyrics\large #1}}
+
+% Automatically calls this at the start of all choruses
+\renewcommand{\everychorus}{\sectionlabel{Chorus:}}
+
+% Manually call this at the start of all verses which you want labeled as a verse
+\newcommand{\versetitle}{\sectionlabel{Verse \theversenum:}}
+
+% Bridges
+\newcommand{\beginbridge}{\beginverse*\sectionlabel{Bridge:}}
+\def\endbridge{\endverse}
+
+% Tags
+\newcommand{\begintag}{\beginverse*\sectionlabel{Tag:}}
+\def\endtag{\endverse}
+
+%% ACTUAL SONG
+\begin{document}
+\begin{songs}{}
+
+\beginsong{10000 Reasons (G)}[by={Matt Redman}]
+% \transpose{1}
+
+
+\ifchorded\beginverse*
+{\nolyrics \sectionlabel{Intro:} \[C] \[G&] \[D/F#] \[Em] \[C] \[G] \[Dsus] \[D]}
+\endverse\fi
+
+\beginchorus
+Bless the \[C]Lord, O my \[G]soul,
+\[D]O my \[Em]soul, \[C]worship His \[G]holy \[D]Name.
+Sing like \[C]never be\[Dm]fore, \[C]O \[D]my \[Em]soul.
+I’ll \[C]worship Your \[D]holy \[Gsus]Name\[G].
+\endchorus
+
+\beginverse\memorize\versetitle
+The \[C]sun comes \[G]up, it’s a \[D]new day \[Em]dawning;
+\[C]It’s time to \[G]sing Your \[D]song \[Em]again.
+What\[C]ever may \[G]pass and what\[D]ever lies be\[Em]fore me,
+\[C]Let me be \[G]singing when the \[D]evening \[G]comes.
+\endverse
+
+\beginchorus
+Bless the \[C]Lord, O my \[G]soul,
+\[D]O my \[Em]soul, \[C]worship His \[G]holy \[D]Name.
+Sing like \[C]never be\[Dm]fore, \[C]O \[D]my \[Em]soul.
+I’ll \[C]worship Your \[D]holy \[Gsus]Name\[G].
+\endchorus
+
+\beginverse\versetitle
+You’re ^rich in ^love and You’re ^slow to ^anger,
+Your ^Name is ^great and Your ^heart is ^kind;
+For ^all Your ^goodness I will ^keep on ^singing,
+^Ten thousand ^reasons for my ^heart to ^find.
+\endverse
+
+\beginchorus
+Bless the \[C]Lord, O my \[G]soul,
+\[D]O my \[Em]soul, \[C]worship His \[G]holy \[D]Name.
+Sing like \[C]never be\[Dm]fore, \[C]O \[D]my \[Em]soul.
+I’ll \[C]worship Your \[D]holy \[Gsus]Name\[G].
+\endchorus
+
+\beginverse\versetitle
+And ^on that ^day when my ^strength is ^failing,
+The ^end draws ^near and my ^time has ^come;
+^Still my ^soul sings Your ^praise un^ending,
+^Ten thousand ^years and then for^ever^more.
+\endverse
+
+\beginchorus
+Bless the \[C]Lord, O my \[G]soul,
+\[D]O my \[Em]soul, \[C]worship His \[G]holy \[D]Name.
+Sing like \[C]never be\[Dm]fore, \[C]O \[D]my \[Em]soul.
+I’ll \[C]worship Your \[D]holy \[Gsus]Name\[G].
+(repeat chorus)
+\endchorus
+
+\endsong
+
+\end{songs}
+\end{document}

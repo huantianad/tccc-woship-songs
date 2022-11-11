@@ -1,0 +1,91 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, margin=0.5in]{geometry}
+\usepackage[sfdefault]{carlito}
+\usepackage{leadsheets}
+
+\definesongtitletemplate{custom}{%
+    \ifsongmeasuring%
+    {\section*}%
+    {\section*}{%
+        \huge\songproperty{title}%
+        \ifsongproperty{key}{ (\songproperty{key})}{}\\%
+        \ifsongproperty{music} {%
+            \normalfont\large%
+            \printsongpropertylist{music}{ \& }{, }{ \& }%
+        }%
+        {}%
+    }%
+}
+
+\setchords{
+    format = {\bf},
+}
+\setleadsheets{
+    align-chords = l,
+    title-template = custom,
+    transpose = 0,
+    verses-label-format = \bf Verse,
+    chorus/label-format = \bf,
+    remember-chords = true,
+}
+
+\begin{document}
+
+\begin{song}{title={10,000 Reasons}, music={Matt Redman}, key=C}
+
+\begin{chorus}
+Bless the ^{C}Lord, O my ^{G}soul, \\
+^{D/F#}O my ^{Em}soul, \\
+^{C}Worship his ho^{G}---ly name. ^{Dsus4} ^{D} \\
+Sing like ^{C}never be^{Em}fore, \\
+^{C}O ^{D}my ^{Em}soul, \\
+I'll ^{C}worship Your ho^{D}---ly name. ^{C/G} ^{G} ^{C/G} ^{G} \\
+\end{chorus}
+
+\begin{verse}
+You're ^{C}rich in ^{G}love, and You're ^{D}slow to ^{Em}anger. \\
+Your ^{C}name is ^{G}great, and Your ^{D}heart is kind.^{Em} \\
+For ^{C}all Your ^{G}goodness, I will ^{D}keep on ^{Em}singing. \\
+^{C2} Ten thousand ^{G}reasons for my ^{Dsus4}heart ^{D}to ^{G}find. ^{Gsus4} ^{G} \\
+\end{verse}
+\begin{verse}
+You're ^{C}rich in ^{G}love, and You'rel ^{D}slow to ^{Em}anger. \\
+Your ^{C}name is ^{G}great, and Your ^{D}heart is kind.^{Em} \\
+For ^{C}all Your ^{G}goodness, I will ^{D}keep on ^{Em}singing. \\
+^{C2} Ten thousand ^{G}reasons for my ^{Dsus4}heart ^{D}to ^{G}find. ^{Gsus4} ^{G} \\
+\end{verse}
+\begin{verse}
+You're ^{C}rich in ^{G}love, and You're ^{D}slow to ^{Em}anger. \\
+Your ^{C}name is ^{G}great, and Your ^{D}heart is kind.^{Em} \\
+For ^{C}all Your ^{G}goodness, I will ^{D}keep on ^{Em}singing. \\
+^{C2} Ten thousand ^{G}reasons for my ^{Dsus4}heart ^{D}to ^{G}find. ^{Gsus4} ^{G} \\
+\end{verse}
+\begin{verse}
+You're ^{C}rich in ^{G}love, and You're ^{D}slow to ^{Em}anger. \\
+Your ^{C}name is ^{G}great, and Your ^{D}heart is kind.^{Em} \\
+For ^{C}all Your ^{G}goodness, I will ^{D}keep on ^{Em}singing. \\
+^{C2} Ten thousand ^{G}reasons for my ^{Dsus4}heart ^{D}to ^{G}find. ^{Gsus4} ^{G} \\
+\end{verse}
+\begin{verse}
+You're ^{C}rich in ^{G}love, and You're ^{D}slow to ^{Em}anger. \\
+Your ^{C}name is ^{G}great, and Your ^{D}heart is kind.^{Em} \\
+For ^{C}all Your ^{G}goodness, I will ^{D}keep on ^{Em}singing. \\
+^{C2} Ten thousand ^{G}reasons for my ^{Dsus4}heart ^{D}to ^{G}find. ^{Gsus4} ^{G} \\
+\end{verse}
+\begin{verse}
+You're ^{C}rich in ^{G}love, and You're ^{D}slow to ^{Em}anger. \\
+Your ^{C}name is ^{G}great, and Your ^{D}heart is kind.^{Em} \\
+For ^{C}all Your ^{G}goodness, I will ^{D}keep on ^{Em}singing. \\
+^{C2} Ten thousand ^{G}reasons for my ^{Dsus4}heart ^{D}to ^{G}find. ^{Gsus4} ^{G} \\
+\end{verse}
+
+% \begin{verse}
+% And ^on that ^day when my ^strength is ^failing, \empty \\
+% The ^end draws ^near, and my ^time has come;^ \empty \\
+% ^Still my ^soul will sing Your ^praise un^ending; \empty \\
+% ^ Ten thousand ^years and then for^e^ver^more! ^ ^ \empty \\
+% \end{verse}
+
+\end{song}
+\end{document}

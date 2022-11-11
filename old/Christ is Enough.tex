@@ -1,0 +1,120 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, margin=0.5in]{geometry}
+\usepackage[chorded]{songs}
+% \usepackage{leadsheets}
+
+%% FORMATTING
+\noversenumbers
+\nosongnumbers
+
+% No horizontal bar that separates songs
+% Since we only have one song per document
+\setlength{\sbarheight}{0pt}
+% No vertical bar to the left the chorus
+\setlength{\cbarwidth}{0pt}
+
+%% FONTS
+\usepackage[sfdefault]{carlito}
+\renewcommand{\printchord}[1]{\carlito\bf#1}
+\renewcommand{\stitlefont}{\carlito\Huge\bf}
+\renewcommand{\extendprelude}{\showrefs{\large\songauthors}}
+
+%% VERSE AND CHORUS LABELS
+\def\notebgcolor{} % no background for \textnote
+\newcommand{\sectionlabel}[1]{\textbf{\nolyrics\large #1}}
+
+% Automatically calls this at the start of all choruses
+\renewcommand{\everychorus}{\sectionlabel{Chorus:}}
+
+% Manually call this at the start of all verses which you want labeled as a verse
+\newcommand{\versetitle}{\sectionlabel{Verse \theversenum:}}
+
+% Bridges
+\newcommand{\beginbridge}{\beginverse*\sectionlabel{Bridge:}}
+\def\endbridge{\endverse}
+
+% Tags
+\newcommand{\beginoutro}{\beginverse*\sectionlabel{Outro:}}
+\def\endoutro{\endverse}
+
+%% ACTUAL SONG
+\begin{document}
+\begin{songs}{}
+
+\beginsong{Christ is Enough (G)}[by={Hillsong Worship}]
+% \transpose{1}
+
+\ifchorded\beginverse*
+{\nolyrics \sectionlabel{Intro:} \[Em] \[C] \[G] \[D]}
+\endverse\fi
+
+\beginverse\memorize\versetitle
+\[Em]Christ is my reward\[C]
+And all of my dev\[G]otion \[D]
+Now there's \[Em]nothing in this world\[C]
+That could ever satisfy\[G]  \[D]
+
+Through \[G]every trial\[C]
+My \[D]soul will sing\[Em]
+No \[G]turning back\[C]
+I've \[Em]been set free\[D]
+\endverse
+
+\beginchorus
+\[G]Christ is enough for me
+\[Em]Christ is enough for \[D]me\[C]
+Everything I \[D]need is \[Em]in You\[C]
+Everything I \[D]need
+\endchorus
+
+\beginverse\versetitle
+^Christ my all in all^
+The joy of my sal^vation^
+And this ^hope will never fail^
+Heaven is our home^  ^
+Through ^every storm^
+My ^soul will sing^
+Je^sus is here^
+To ^God be the ^glory
+\endverse
+
+\beginchorus
+\[G]Christ is enough for me
+\[Em]Christ is enough for \[D]me\[C]
+Everything I \[D]need is \[Em]in You\[C]
+Everything I \[D]need
+\endchorus
+
+\beginbridge
+I have de\[G]cided\[C/G] to follow \[Gsus4]Jesus\[G]
+No turning \[C]back
+\[Em]No turning \[D]back
+
+I have de\[G]cided\[C/G] to follow \[Gsus4]Jesus\[G]
+No turning \[C]back
+No \[D]turning \[G]back
+
+The cross be\[G]fore me\[C/G]
+The world be\[Gsus4]hind me\[G]
+No turning \[C]back
+\[Em]No turning \[D]back
+
+The cross be\[G]fore me\[C/G]
+The world be\[Gsus4]hind me\[G]
+No turning \[C]back
+No \[D]turning \[G]back
+\endbridge
+
+\beginchorus
+\[G]Christ is enough for me
+\[Em]Christ is enough for \[D]me\[C]
+Everything I \[D]need is \[Em]in You\[C]
+Everything I \[D]need
+(chorus repeat)
+\endchorus
+
+\endsong
+
+\end{songs}
+\end{document}

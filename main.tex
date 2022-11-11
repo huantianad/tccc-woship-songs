@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper, margin=0.5in]{geometry}
+\usepackage[chorded]{songs}
+\usepackage{hyperref} % For index PDF hyperlinks
+
+%% FORMATTING
+\noversenumbers
+\nosongnumbers
+
+% No horizontal bar that separates songs
+% Since we only have one song per document
+\setlength{\sbarheight}{0pt}
+% No vertical bar to the left the chorus
+\setlength{\cbarwidth}{0pt}
+
+%% FONTS
+\usepackage[sfdefault]{carlito}
+\renewcommand{\printchord}[1]{\carlito\bf#1}
+\renewcommand{\stitlefont}{\carlito\Huge\bf}
+
+%% Table of Contents
+% https://tex.stackexchange.com/a/438598
+\newcommand{\toctitle}{}
+\newcommand{\toclink}{}
+{\makeatletter\gdef\toclink{\@ifundefined{href}{}{{song\theSB@songsnum-\thesongnum
+                                                   .\ifnum\value{section}=0 1\else2\fi}}}}
+\newcommand{\addtotoc}[1]{
+    \addtocontents{toc}{
+        \protect\contentsline
+        {\ifnum\value{section}>0sub\fi section}{\numberline\thesongnum#1}{\thepage}\toclink
+  }
+}
+\newsongkey{toc}
+  {\def\toctitle{\resettitles\addtotoc\songtitle}}
+  {\def\toctitle{\addtotoc{#1}}}
+% a bit of custom formatting here for SONG AUTHOR
+\renewcommand{\extendprelude}{\showrefs\large\showauthors\toctitle}
+
+%% VERSE AND CHORUS LABELS
+% \def\notebgcolor{} % no background for \textnote
+\newcommand{\sectionlabel}[1]{\textbf{\nolyrics\large #1}}
+
+% Automatically calls this at the start of all choruses
+\renewcommand{\everychorus}{\sectionlabel{Chorus:}}
+
+% Manually call this at the start of all verses which you want labeled
+\newcommand{\versetitle}{\sectionlabel{Verse \theversenum:}}
+
+% Bridges
+\newcommand{\beginbridge}{\beginverse*\sectionlabel{Bridge:}}
+\def\endbridge{\endverse}
+
+% Outros
+\newcommand{\beginoutro}{\beginverse*\sectionlabel{Tag:}}
+\def\endoutro{\endverse}
+
+\usepackage{subfiles}
+
+\begin{document}
+
+\tableofcontents
+
+\begin{songs}{}
+% script that recurses through each file in the songs directory
+% and includes it as a subfile
+\directlua{dofile("subfileall.lua")}
+\end{songs}
+
+\end{document}

@@ -1,0 +1,118 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, margin=0.5in]{geometry}
+\usepackage[chorded]{songs}
+% \usepackage{leadsheets}
+
+%% FORMATTING
+\noversenumbers
+\nosongnumbers
+
+% No horizontal bar that separates songs
+% Since we only have one song per document
+\setlength{\sbarheight}{0pt}
+% No vertical bar to the left the chorus
+\setlength{\cbarwidth}{0pt}
+
+%% FONTS
+\usepackage[sfdefault]{carlito}
+\renewcommand{\printchord}[1]{\carlito\bf#1}
+\renewcommand{\stitlefont}{\carlito\Huge\bf}
+\renewcommand{\extendprelude}{\showrefs{\large\songauthors}}
+
+%% VERSE AND CHORUS LABELS
+\def\notebgcolor{} % no background for \textnote
+\newcommand{\sectionlabel}[1]{\textbf{\nolyrics\large #1}}
+
+% Automatically calls this at the start of all choruses
+\renewcommand{\everychorus}{\sectionlabel{Chorus:}}
+
+% Manually call this at the start of all verses which you want labeled as a verse
+\newcommand{\versetitle}{\sectionlabel{Verse \theversenum:}}
+
+% Bridges
+\newcommand{\beginbridge}{\beginverse*\sectionlabel{Bridge:}}
+\def\endbridge{\endverse}
+
+% Tags
+\newcommand{\begintag}{\beginverse*\sectionlabel{Tag:}}
+\def\endtag{\endverse}
+
+%% ACTUAL SONG
+\begin{document}
+\begin{songs}{}
+
+\beginsong{Our God (F)}[by={Chris Tomlin}]
+% \transpose{1}
+
+V1 V2 C V3 C B C
+
+\ifchorded\beginverse*
+{\nolyrics \sectionlabel{Intro:} \[Dm] \[B&] \[F] \[C]}
+\endverse\fi
+
+\beginverse\memorize\versetitle
+\[Dm]Water You tur\[B&]ned into wine\[F]
+\[Dm]Opened the e\[B&]yes of the blind\[F]
+There's no one \[Gm]like you
+None like \[C]you
+\endverse
+
+\beginverse\versetitle
+^Into the dar^kness You shine^
+^Out of the a^shes we rise^
+There's No one ^like you
+None like ^you
+\endverse
+
+\beginchorus
+\[Dm]Our God is greater, \[B&]our God is stronger
+\[F]God You are higher than a\[C]ny other
+\[Dm]Our God is Healer, \[B&]awesome in power
+Our G\[F]od, Our G\[C]od
+\endchorus
+
+\ifchorded\beginverse*
+{\nolyrics \sectionlabel{Instrumental:} \[Dm] \[B&] \[F] \[C]}
+\endverse\fi
+
+\beginverse\versetitle
+^Into the dar^kness You shine^
+^Out of the a^shes we rise^
+There's No one ^like you
+None like ^you
+\endverse
+
+\beginchorus
+\[Dm]Our God is greater, \[B&]our God is stronger
+\[F]God You are higher than a\[C]ny other
+\[Dm]Our God is Healer, \[B&]awesome in power
+Our G\[F]od, Our G\[C]od
+(optional chorus repeat)
+\endchorus
+
+\ifchorded\beginverse*
+{\nolyrics \sectionlabel{Instrumental:} \[Dm] \[B&] \[F] \[C]}
+\endverse\fi
+
+\beginbridge
+\[Dm]And if Our God is for us, \[B&]then who could ever stop us?
+\[F]And if our God is with us, \[C]then what can stand against?
+\[Dm]And if Our God is for us, \[B&]then who could ever stop us?
+\[F]And if our God is with us, \[C]then what can stand against?
+\[Dm] \quad \[B&] \quad \[F] \quad \[C]Then what can stand against?
+\[Dm] \quad \[B&] \quad \[F] \quad \[C]
+\endbridge
+
+
+\beginchorus
+\[Dm]Our God is greater, \[B&]our God is stronger
+\[F]God You are higher than a\[C]ny other
+\[Dm]Our God is Healer, \[B&]awesome in power
+Our G\[F]od, Our G\[C]od
+(optional chorus repeat)
+\endchorus
+\endsong
+
+\end{songs}
+\end{document}

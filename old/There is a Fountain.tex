@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, margin=0.5in]{geometry}
+\usepackage[chorded]{songs}
+% \usepackage{leadsheets}
+
+%% FORMATTING
+\noversenumbers
+\nosongnumbers
+
+% No horizontal bar that separates songs
+% Since we only have one song per document
+\setlength{\sbarheight}{0pt}
+% No vertical bar to the left the chorus
+\setlength{\cbarwidth}{0pt}
+
+%% FONTS
+\usepackage[sfdefault]{carlito}
+\renewcommand{\printchord}[1]{\carlito\bf#1}
+\renewcommand{\stitlefont}{\carlito\Huge\bf}
+\renewcommand{\extendprelude}{\showrefs{\large\songauthors}}
+
+%% VERSE AND CHORUS LABELS
+\def\notebgcolor{} % no background for \textnote
+\newcommand{\sectionlabel}[1]{\textbf{\nolyrics\large #1}}
+
+% Automatically calls this at the start of all choruses
+\renewcommand{\everychorus}{\sectionlabel{Chorus:}}
+
+% Manually call this at the start of all verses which you want labeled as a verse
+\newcommand{\versetitle}{\sectionlabel{Verse \theversenum:}}
+
+% Bridges
+\newcommand{\beginbridge}{\beginverse*\sectionlabel{Bridge:}}
+\def\endbridge{\endverse}
+
+% Tags
+\newcommand{\begintag}{\beginverse*\sectionlabel{Tag:}}
+\def\endtag{\endverse}
+
+%% ACTUAL SONG
+\begin{document}
+\begin{songs}{}
+
+\beginsong{There is a Fountain (A)}[by={William Cowper}]
+% \transpose{1}
+
+\ifchorded\beginverse*
+{\nolyrics \sectionlabel{Intro:} \[A] \[D] \[A] \[D]}
+\endverse\fi
+
+\beginverse\memorize\versetitle
+
+\[A]There is a fountain \[D]filled with blood
+  Drawn \[A]from Immanuel’s \[E]veins;
+And \[A]sinners, plunged be\[D]neath that flood,
+  Lose \[A]all their \[E]guilty \[A]stains:
+  Lose \[A]all their guilty \[D]stains,
+  Lose \[A]all their guilty \[E]stains;
+And,  \[A]sinners plunged be\[D]neath that flood,
+  Lose \[A]all their \[E]guilty \[A]stains.
+\endverse
+
+\beginverse\versetitle
+	The ^dying thief re^joiced to see
+  That ^fountain in his ^day;
+And ^there may I, though ^vile as he,
+  Wash ^all my ^sins a^way:
+  Wash ^all my sins a^way,
+  Wash ^all my sins a^way;
+And ^there may I, though ^vile as he,
+  Wash ^all my ^sins a^way.
+\endverse
+
+\beginverse\versetitle
+Dear ^dying Lamb, Thy ^precious blood
+  Shall ^never lose its ^power,
+Till ^all the ransomed ^church of God
+  Be ^saved, to ^sin no ^more:
+  Be ^saved, to sin no ^more,
+  Be ^saved, to sin no ^more;
+Till ^all the ransomed ^church of God,
+  Be ^saved to ^sin no ^more.
+\endverse
+
+\endsong
+
+\end{songs}
+\end{document}

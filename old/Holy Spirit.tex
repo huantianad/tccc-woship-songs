@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, margin=0.5in]{geometry}
+\usepackage[chorded]{songs}
+% \usepackage{leadsheets}
+
+%% FORMATTING
+\noversenumbers
+\nosongnumbers
+
+% No horizontal bar that separates songs
+% Since we only have one song per document
+\setlength{\sbarheight}{0pt}
+% No vertical bar to the left the chorus
+\setlength{\cbarwidth}{0pt}
+
+%% FONTS
+\usepackage[sfdefault]{carlito}
+\renewcommand{\printchord}[1]{\carlito\bf#1}
+\renewcommand{\stitlefont}{\carlito\Huge\bf}
+\renewcommand{\extendprelude}{\showrefs{\large\songauthors}}
+
+%% VERSE AND CHORUS LABELS
+\def\notebgcolor{} % no background for \textnote
+\newcommand{\sectionlabel}[1]{\textbf{\nolyrics\large #1}}
+
+% Automatically calls this at the start of all choruses
+\renewcommand{\everychorus}{\sectionlabel{Chorus:}}
+
+% Manually call this at the start of all verses which you want labeled as a verse
+\newcommand{\versetitle}{\sectionlabel{Verse \theversenum:}}
+
+% Bridges
+\newcommand{\beginbridge}{\beginverse*\sectionlabel{Bridge:}}
+\def\endbridge{\endverse}
+
+% Tags
+\newcommand{\beginoutro}{\beginverse*\sectionlabel{Outro:}}
+\def\endoutro{\endverse}
+
+%% ACTUAL SONG
+\begin{document}
+\begin{songs}{}
+
+\beginsong{Holy Spirit (G)}[by={Jesus Culture}]
+% \transpose{1}
+
+\ifchorded\beginverse*
+{\nolyrics \sectionlabel{Intro:} \[G] \[G]}
+\endverse\fi
+
+\beginverse\memorize\versetitle
+\[G]There's nothing worth more, that will ever come close\[C]
+No thing can compare, You're our living hope\[G]
+Your Presence, \[C]Lord
+\[G]I've tasted and seen, of the sweetest of Loves\[C]
+Where my heart becomes free, and my shame is un\[G]done
+Your Presence, \[C]Lord
+\endverse
+
+\beginchorus
+\[G]Holy Spirit You are welcome here
+Come \[C]flood this place and fill the atmosphere
+Your \[G]Glory God is what our hearts long for
+To be \[C]overcome by Your Presence Lord\[G]
+Your Presence, \[C]Lord
+\endchorus
+
+\beginverse\versetitle
+\[G]There's nothing worth more, that will ever come close\[C]
+No thing can compare, You're our living hope\[G]
+Your Presence, \[C]Lord
+\[G]I've tasted and seen, of the sweetest of Loves\[C]
+Where my heart becomes free, and my shame is un\[G]done
+Your Presence, \[C]Lord
+\endverse
+
+\beginchorus
+\[G]Holy Spirit You are welcome here
+Come \[C]flood this place and fill the atmosphere
+Your \[G]Glory God is what our hearts long for
+To be \[C]overcome by Your Presence Lord\[G]
+Your Presence, \[C]Lord
+\endchorus
+
+\beginbridge
+\[G]Let us become more aware of Your Presence
+\[G]Let us experience the Glory of Your Goodness
+\[C]Let us be\[G]come more a\[Am]ware of Your \[G]Presence
+\[C]Let us ex\[G]perience the Gl\[Am]ory of Your \[G]Goodness
+\[C]Let us be\[G]come more a\[Am]ware of Your \[G]Presence
+\[C]Let us ex\[G]perience the Gl\[Am]ory of Your \[G]Goodness
+\[C]Let us be\[G]come more a\[Am]ware of Your \[G]Presence
+\[C]Let us ex\[G]perience the Gl\[Am]ory of Your \[G]Goodness
+\endbridge
+
+\beginchorus
+\[G]Holy Spirit You are welcome here
+Come \[C]flood this place and fill the atmosphere
+Your \[G]Glory God is what our hearts long for
+To be \[C]overcome by Your Presence Lord\[G]
+Your Presence, \[C]Lord
+\endchorus
+
+\endsong
+
+\end{songs}
+\end{document}

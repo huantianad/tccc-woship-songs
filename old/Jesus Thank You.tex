@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, margin=0.5in]{geometry}
+\usepackage[chorded]{songs}
+% \usepackage{leadsheets}
+
+%% FORMATTING
+\noversenumbers
+\nosongnumbers
+
+% No horizontal bar that separates songs
+% Since we only have one song per document
+\setlength{\sbarheight}{0pt}
+% No vertical bar to the left the chorus
+\setlength{\cbarwidth}{0pt}
+
+%% FONTS
+\usepackage[sfdefault]{carlito}
+\renewcommand{\printchord}[1]{\carlito\bf#1}
+\renewcommand{\stitlefont}{\carlito\Huge\bf}
+\renewcommand{\extendprelude}{\showrefs{\large\songauthors}}
+
+%% VERSE AND CHORUS LABELS
+\def\notebgcolor{} % no background for \textnote
+\newcommand{\sectionlabel}[1]{\textbf{\nolyrics\large #1}}
+
+% Automatically calls this at the start of all choruses
+\renewcommand{\everychorus}{\sectionlabel{Chorus:}}
+
+% Manually call this at the start of all verses which you want labeled as a verse
+\newcommand{\versetitle}{\sectionlabel{Verse \theversenum:}}
+
+% Bridges
+\newcommand{\beginbridge}{\beginverse*\sectionlabel{Bridge:}}
+\def\endbridge{\endverse}
+
+% Tags
+\newcommand{\beginoutro}{\beginverse*\sectionlabel{Outro:}}
+\def\endoutro{\endverse}
+
+%% ACTUAL SONG
+\begin{document}
+\begin{songs}{}
+
+\beginsong{Jesus, Thank You (G)}[by={Sovereign Grace Music}]
+% \transpose{1}
+
+\ifchorded\beginverse*
+{\nolyrics \sectionlabel{Intro:} \[Em] \[C] \[G] \[D]}
+\endverse\fi
+
+\beginverse\memorize\versetitle
+The \[Em]mystery of the cr\[C]oss I cannot \[G]comprehend\[D]
+The \[Em]agonies of \[C]Calvary\[D]
+\[Em]You the perfect H\[C]oly One, \[G]crushed Your Son\[D]
+Who \[Am]drank the bitter cup reserved for \[D]me
+\endverse
+
+\beginchorus
+Your \[G]blood has \[D]washed away my sin\[Em]
+Jesus, \[C]thank You
+The \[G]Father’s wrath comp\[D]letely satisfied\[Em]
+Jesus, \[C]thank You
+\[Em]Once Your enemy\[D], now \[G]seated at Your t\[C]able
+Jesus, \[D]thank \[G]You
+\endchorus
+
+\beginverse\versetitle
+^By Your perfect s^acrifice I’ve ^been brought near^
+Your ^enemy You’ve ^made Your friend^
+^Pouring out the r^iches of Your ^glorious grace^
+Your ^mercy and Your kindness know no ^end
+\endverse
+
+\beginchorus
+Your \[G]blood has \[D]washed away my sin\[Em]
+Jesus, \[C]thank You
+The \[G]Father’s wrath comp\[D]letely satisfied\[Em]
+Jesus, \[C]thank You
+\[Em]Once Your enemy\[D], now \[G]seated at Your t\[C]able
+Jesus, \[D]thank \[G]You
+\endchorus
+
+\beginbridge
+\[Em]Lover o\[D]f my sou\[G]l
+I want to \[Em]live \[D]for \[C]You
+(x4)
+\endbridge
+
+\beginchorus
+Your \[G]blood has \[D]washed away my sin\[Em]
+Jesus, \[C]thank You
+The \[G]Father’s wrath comp\[D]letely satisfied\[Em]
+Jesus, \[C]thank You
+\[Em]Once Your enemy\[D], now \[G]seated at Your t\[C]able
+Jesus, \[D]thank \[G]You
+\endchorus
+
+\endsong
+
+\end{songs}
+\end{document}
