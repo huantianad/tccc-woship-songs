@@ -38,8 +38,12 @@ jobs:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
             
-      - run: nix build
-      - run: nix flake check
+      - name: Compile LaTeX files
+        run: | 
+          nix build
+          nix flake check
+          cp --recursive --dereference --no-preserve=mode,ownership result public
+        # cp command to mitigate github pages bug: https://github.com/actions/deploy-pages/issues/58
         
       - name: Setup Pages
         uses: actions/configure-pages@v2
